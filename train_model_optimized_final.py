@@ -132,7 +132,6 @@ def main():
         val_dataset = Dataset.from_pandas(val_df)
         
         logger.info("对文本进行分词...")
-        # 使用修复后的tokenize_function
         train_dataset = train_dataset.map(
             lambda x: tokenize_function(x, tokenizer),
             batched=True,
